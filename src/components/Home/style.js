@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Corpo = styled.div`
   width: 100vw;
   height: 100vh;
@@ -18,8 +17,8 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
 
-h1 {
-  font-family: "Raleway";
+  h1 {
+    font-family: "Raleway";
     font-weight: 700;
     font-size: 26px;
     line-height: 31px;
@@ -59,7 +58,6 @@ export const Footer = styled.div`
   width: 326px;
   display: flex;
   justify-content: space-between;
-  
 `;
 
 export const InsideFooter = styled.div`
@@ -71,7 +69,6 @@ export const InsideFooter = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 11px 0px 10px 10px;
-  
 
   p {
     font-family: "Raleway";
@@ -85,5 +82,34 @@ export const InsideFooter = styled.div`
     width: 25px;
     height: 25px;
     color: #ffffff;
+  }
+`;
+
+export const Infos = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+
+  span {
+    font-family: "Raleway";
+    font-size: 16px;
+    line-height: 19px;
+    color: #c6c6c6;
+  }
+
+  h2 {
+    font-family: "Raleway";
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+
+  h3 {
+    font-family: "Raleway";
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #c70000;
   }
 `;

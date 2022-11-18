@@ -6,6 +6,7 @@ import styled from "styled-components";
 export default function Out() {
   const [value, setValue] = useState("");
   const [description, setDescription] = useState("");
+  const [out, setOut] = useState("out")
   const Navigate = useNavigate();
 
   function newOut(event) {
@@ -15,10 +16,11 @@ export default function Out() {
       .post("http://localhost:5000", {
         value: value,
         description: description,
+        type:out
       })
       .then((res) => {
         console.log(res.data);
-        Navigate("");
+        Navigate("/home");
       })
       .catch((err) => {
         alert(err.data.message);

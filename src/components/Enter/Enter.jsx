@@ -6,6 +6,7 @@ import styled from "styled-components";
 export default function Enter() {
   const [value, setValue] = useState("");
   const [description, setDescription] = useState("");
+  const [enter, setEnter] = useState("enter")
   const Navigate = useNavigate();
 
   function newEnter(event) {
@@ -16,16 +17,19 @@ export default function Enter() {
       .post("http://localhost:5000", {
         value: value,
         description: description,
+        type: enter
       })
       .then((res) => {
         console.log(res.data);
-        Navigate("");
+        Navigate("/home");
       })
       .catch((err) => {
         alert(err.data.message);
         console.log(err.data.message);
       });
   }
+
+  
 
   return (
     <Body>

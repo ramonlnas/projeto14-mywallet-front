@@ -14,7 +14,7 @@ export default function SignUp() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000", {
+      .post("http://localhost:5000/sign-up", {
         name: name,
         email: email,
         password: password,
@@ -26,8 +26,7 @@ export default function SignUp() {
         Navigate("/")
       })
       .catch((err) => {
-        console.log(err.data.message)
-        alert(err.data.message)
+        console.log(err.data)
       });
   }
 

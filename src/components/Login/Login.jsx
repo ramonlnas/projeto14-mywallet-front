@@ -1,29 +1,33 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const Navigate = useNavigate();
+  const  {getToken, getName} = useContext(AuthContext);
+  // const {getName} = useContext(AuthContext)
 
   function fazerLogin(event) {
     event.preventDefault();
 
-    axios.post("http://localhost:5000", {
+    axios
+      .post("http://localhost:5000", {
         email: email,
         password: password,
       })
       .then((res) => {
         console.log(res.data);
-        Navigate("");
+        getToken(res.data.token);
+        getName(res.data.name);
+        Navigate("/home");
       })
       .catch((err) => {
-        alert(err.data.message);
-        console.log(err.data.message);
+        console.log(err);
       });
-      
   }
 
   return (
