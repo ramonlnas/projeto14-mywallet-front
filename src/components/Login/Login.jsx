@@ -8,14 +8,14 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const Navigate = useNavigate();
-  const  {getToken, getName} = useContext(AuthContext);
+  const  {getToken, getName, getId} = useContext(AuthContext);
   // const {getName} = useContext(AuthContext)
 
   function fazerLogin(event) {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000", {
+      .post("http://localhost:5000/", {
         email: email,
         password: password,
       })
@@ -23,6 +23,7 @@ export default function Login() {
         console.log(res.data);
         getToken(res.data.token);
         getName(res.data.name);
+        getId(res.data.id)
         Navigate("/home");
       })
       .catch((err) => {

@@ -7,6 +7,7 @@ export function AuthContextProvider({children}) {
     
     const [token, setToken] = useState("")
     const [name, setName] = useState("")
+    const [id, setId] = useState("")
 
     function getToken(Token) {
         setToken(Token)
@@ -20,9 +21,13 @@ export function AuthContextProvider({children}) {
 
     }
 
+    function getId(id) {
+        setId(id)
+    }
+
     return (
         <AuthContext.Provider
-            value={{getToken, getName, name, token}}
+            value={{getToken, getName, getId, name, token, id}}
         >
             {children}
         </AuthContext.Provider>

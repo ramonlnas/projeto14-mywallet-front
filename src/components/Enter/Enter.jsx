@@ -1,24 +1,33 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Enter() {
   const [value, setValue] = useState("");
   const [description, setDescription] = useState("");
   const [enter, setEnter] = useState("enter")
   const Navigate = useNavigate();
+  const {token, id} = useContext(AuthContext)
+
 
   function newEnter(event) {
     event.preventDefault();
-    event.preventDefault();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        id: id
+      },
+    };
 
     axios
-      .post("http://localhost:5000", {
+      .post("http://localhost:5000/enter", {
         value: value,
         description: description,
         type: enter
-      })
+      }, config)
       .then((res) => {
         console.log(res.data);
         Navigate("/home");

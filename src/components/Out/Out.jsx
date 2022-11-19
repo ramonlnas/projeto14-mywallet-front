@@ -1,23 +1,32 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Out() {
   const [value, setValue] = useState("");
   const [description, setDescription] = useState("");
   const [out, setOut] = useState("out")
   const Navigate = useNavigate();
+  const {token, id} = useContext(AuthContext)
 
   function newOut(event) {
     event.preventDefault();
 
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        id: id
+      },
+    };
+
     axios
-      .post("http://localhost:5000", {
+      .post("http://localhost:5000/out", {
         value: value,
         description: description,
         type:out
-      })
+      }, config)
       .then((res) => {
         console.log(res.data);
         Navigate("/home");

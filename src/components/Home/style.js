@@ -85,6 +85,19 @@ export const InsideFooter = styled.div`
   }
 `;
 
+export const InsideContent = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-family: "Raleway";
+    font-size: 16px;
+    line-height: 19px;
+    color: #c6c6c6;
+  }
+`
+
 export const Infos = styled.div`
   display: flex;
   justify-content: space-around;
