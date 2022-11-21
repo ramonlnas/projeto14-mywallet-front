@@ -8,6 +8,7 @@ export const Corpo = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #8c11be;
+  font-family: "Raleway";
 `;
 
 export const Header = styled.div`
@@ -38,6 +39,8 @@ export const Content = styled.div`
   background-color: #ffffff;
   margin-bottom: 13px;
   border-radius: 8px;
+  padding: 23px 11px 11px 11px;
+  position: relative;
 
   p {
     font-family: "Raleway";
@@ -71,7 +74,6 @@ export const InsideFooter = styled.div`
   padding: 11px 0px 10px 10px;
 
   p {
-    font-family: "Raleway";
     font-weight: 700;
     font-size: 17px;
     line-height: 20px;
@@ -85,7 +87,7 @@ export const InsideFooter = styled.div`
   }
 `;
 
-export const InsideContent = styled.div `
+export const InsideContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,11 +98,11 @@ export const InsideContent = styled.div `
     line-height: 19px;
     color: #c6c6c6;
   }
-`
+`;
 
 export const Infos = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 
@@ -116,13 +118,42 @@ export const Infos = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: #000000;
+    margin-right: 150px;
   }
-
   h3 {
     font-family: "Raleway";
     font-size: 16px;
     line-height: 19px;
     text-align: right;
-    color: #c70000;
+    /* color: #c70000; */
+  }
+`;
+
+export const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+
+  h1 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+    color: #000000;
+    margin:0px 230px 0 11px
+  }
+
+  p {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: right;
+    text-decoration: none
   }
 `;

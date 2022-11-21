@@ -22,7 +22,6 @@ export default function SignUp() {
       })
       .then((res) => {
         console.log(res.data)
-        alert("Cadastrado realizado com sucesso!")
         Navigate("/")
       })
       .catch((err) => {
@@ -65,7 +64,7 @@ export default function SignUp() {
             required
           />
 
-          <button type="submit">Entrar</button>
+          <button type="submit">Cadastrar</button>
         </form>
       </DivLogin>
       <Link to={"/"}>
